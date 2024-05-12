@@ -1,0 +1,9 @@
+<h3>Lista de heroes</h3>
+<ul>
+  <li class="mt-2 list-group-item" *ngFor="let hero of heroesList">{{hero}}</li>
+</ul>
+
+<button class="btn btn-primary" (click)="removeLastHero()">Eliminar ultimo heroe</button>
+<p *ngIf="removedHero">Heroe eliminado:{{removedHero}}</p>
+
+<p class="mt-2" *ngIf="!removedHero">Ningun heroe ha sido eliminado</p>

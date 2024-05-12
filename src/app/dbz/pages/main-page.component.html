@@ -1,0 +1,42 @@
+<h2>Personajes DBZ</h2>
+<hr>
+<!-- Creando html usando componentes -->
+<div class="row">
+
+  <div class="col">
+    <dbz-list [character]="dbzService.character"
+    (onDelete)="dbzService.onDeleteById($event)"
+    >
+
+    </dbz-list>
+  </div>
+
+  <div class="col">
+     <dbz-form
+     (onNewCharacter)="dbzService.onNewCharacter($event)" >
+    </dbz-form>
+  </div>
+</div>
+
+
+<!-- Creando html sin componentes -->
+<!--
+<div class="row">
+
+  <div class="col">
+    <h4>Listado de personajes</h4>
+    <ul class="list-group">
+      <li class="list-group-item">Goku - Poder: 10000</li>
+      <li class="list-group-item">Krillin - Poder: 1000</li>
+    </ul>
+  </div>
+
+  <div class="col">
+    <h4>Agregar personaje</h4>
+    <form action="">
+      <input type="text" placeholder="Personaje" class="form-control mb-2">
+      <input type="number" placeholder="Poder" class="form-control mb-2">
+      <button class="btn btn-primary" type="submit"> Agregar personaje</button>
+    </form>
+  </div>
+</div> -->

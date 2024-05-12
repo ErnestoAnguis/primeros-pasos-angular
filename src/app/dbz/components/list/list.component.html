@@ -1,0 +1,28 @@
+<!--ngclass funciona para añadir clases dependiendo una expresion -->
+<h4>Listado de personajes</h4>
+    <ul class="list-group">
+      <li *ngFor="
+      let char of character;
+      let i = index;
+      let isFirst = first;
+      let isLast = last;
+      let isEven= even;
+      "
+      class="list-group-item d-flex justify-content-between align-objects-center"
+      [ngClass]="{
+        'list-group-item-primary': isEven,
+        'list-group-item-dark': isLast
+        }">
+        <div>
+          <span class="text-primary">{{i+1}}.</span>
+
+          {{char.name}}
+
+          -Power: <strong>({{char.power}})</strong>
+
+          ID Personaje {{char.id}}
+      </div>
+
+        <button class="btn btn-danger" (click)="onDeleteCharacter(char.id || '')">X</button>
+      </li>
+    </ul>
